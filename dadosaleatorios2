@@ -1,0 +1,26 @@
+import random
+
+print("Introduzca número de jugadores")
+jugadores=int(input())
+if jugadores<=0:
+        print("¡Imposible!")
+        exit()
+print("Introduzca valor a conseguir")
+valor=int(input())
+if valor>6:
+    print("¡Imposible conseguir un ",valor)
+    exit()
+contador=0
+tirada=0
+
+def valorConseguir(valor, random, jugadores, contador):
+   while(contador!=jugadores):
+        tirada=random.randint(1,6)
+        print(tirada)
+        contador+=1
+        if tirada==0:
+            print("Imposible conseguir un ",valor)
+        elif tirada==valor:
+            print("¡Conseguido!")
+            exit()
+valorConseguir(valor,random,jugadores,contador)
